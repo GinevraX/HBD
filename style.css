@@ -1,0 +1,88 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-color: #f9f9f9; /* 苹果风格的浅色背景 */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow: hidden; /* 防止滚动条出现 */
+}
+
+.background-message {
+    position: absolute;
+    top: 50%; /* 中心位置 */
+    left: 50%;
+    transform: translate(-50%, -50%); /* 使文字居中 */
+    font-size: 3em; /* 字体大小可以根据需要调整 */
+    color: white; /* 祝福语字体颜色 */
+    background-color: rgba(255, 192, 203, 0.7); /* 粉红色背景，带透明度 */
+    padding: 20px; /* 添加内边距 */
+    border-radius: 10px; /* 圆角效果 */
+    z-index: 1; /* 确保文字在上层 */
+    white-space: nowrap; /* 确保文字在同一行 */
+}
+
+.container {
+    position: relative;
+    text-align: center; /* 使内容居中 */
+}
+
+#candle {
+    cursor: pointer;
+    width: 100px; /* 适当调整蜡烛大小 */
+    position: absolute;
+    top: 10px; /* 调整蜡烛的位置 */
+    left: 50%;
+    transform: translateX(-50%); /* 居中蜡烛 */
+}
+
+.cake {
+    width: 200px; /* 适当调整蛋糕大小 */
+    position: relative; /* 使蛋糕为相对定位 */
+    margin: 0 auto; /* 使蛋糕水平居中 */
+}
+
+.hidden {
+    display: none;
+}
+
+.pig, .balloon {
+    position: absolute;
+    width: 50px; /* 适当调整猪猪侠和气球大小 */
+}
+
+.pig {
+    animation: jump 0.5s ease-in-out infinite alternate, rotate 1s linear infinite;
+}
+
+@keyframes jump {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 600px) {
+    #candle {
+        width: 70px; /* 移动设备上的蜡烛大小 */
+    }
+
+    .cake {
+        width: 150px; /* 移动设备上的蛋糕大小 */
+    }
+
+    .pig, .balloon {
+        width: 30px; /* 移动设备上的猪猪侠和气球大小 */
+    }
+
+    .background-message {
+        font-size: 2em; /* 移动设备上的祝福语大小 */
+    }
+}
